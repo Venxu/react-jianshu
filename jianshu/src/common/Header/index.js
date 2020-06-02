@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch } from './style'
-
+import {connect} from 'react-redux'
 class Header extends React.Component {
     render() {
         return (
@@ -35,4 +35,30 @@ class Header extends React.Component {
     }
 
 }
-export default Header
+const mapStateToProps=(state)=>{
+    return{
+    focused:state.focused
+    }
+
+}
+
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        handleInputFocus(){
+            const action={
+                type:'change_input'
+            }
+            dispatch(action)
+        },
+        handleInputBlur(){
+            const action={
+                type:'search_input'
+            }
+            dispatch(action)
+        }
+       
+       
+    }
+    
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Header)

@@ -1,0 +1,21 @@
+const defaultState={
+    focused:false
+}
+
+export default(state=defaultState,action)=>{
+    if(action==='change_input'){
+        // const focused=JSON.parse(JSON.stringify(state))
+        return{
+            focused:true
+        }
+    }
+    if(action==='search_input'){
+        // const  focused=JSON.parse(JSON.stringify(state))
+        return {
+            focused:false
+        }
+        
+    }
+    return state
+
+}
