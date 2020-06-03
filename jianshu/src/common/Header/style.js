@@ -74,7 +74,10 @@ margin:10px 0;
 color:#777;
 padding:0 40px 0 20px;
 box-sizing:border-box;
-
+&.focused{
+    width:250px;
+   
+}
 background: #eee;
 margin-left:15px;
 &::placeholder:{
@@ -83,8 +86,19 @@ margin-left:15px;
 `
 export const NavSearch=styled.div`
 position:relative;
-
 float:left;
+.fade-enter { 
+    transition: all .2s ease-out;
+}
+.fade-enter active{
+    width:250px;
+}
+.fade-exit { 
+    transition: all .2s ease-out;
+}
+.fade-exitr active{
+    width:160px;
+}
 .iconfont{
     position:absolute;
     right:2px;
@@ -93,9 +107,15 @@ float:left;
     line-height:36px;
     border-radius:50%;
     text-align:center;
+    &.focused{
+        background:#777;
+        color:#fff;
+    
+    }
    
   
 }
+
 
 `
 export const Additon=styled.div`
