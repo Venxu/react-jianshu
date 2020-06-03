@@ -1,26 +1,9 @@
 import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch } from './style'
+import {connect} from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-
 class Header extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            focused: false
-        }
-        this.handleFocusInput = this.handleFocusInput.bind(this)
-        this.handleBlur = this.handleBlur.bind(this)
-    }
-    handleFocusInput() {
-        this.setState({
-            focused: true
-        })
-    }
-    handleBlur() {
-        this.setState({
-            focused: false
-        })
-    }
+  
     render() {
         return (
             <HeaderWarper>
@@ -60,4 +43,30 @@ class Header extends React.Component {
     }
 
 }
-export default Header
+const mapStateToProps=(state)=>{
+    return{
+    focused:state.focused
+    }
+
+}
+
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        handleInputFocus(){
+            const action={
+                type:'change_input'
+            }
+            dispatch(action)
+        },
+        handleInputBlur(){
+            const action={
+                type:'search_input'
+            }
+            dispatch(action)
+        }
+       
+       
+    }
+    
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Header)
