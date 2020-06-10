@@ -1,5 +1,6 @@
 const defaultState={
-    focused:false
+    focused:false,
+    list:[]
 }
 
 export default(state=defaultState,action)=>{

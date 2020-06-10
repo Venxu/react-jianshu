@@ -1,8 +1,40 @@
 import React from 'react'
-import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch } from './style'
+import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch, SearchInfo, SeacrchInfoTitle, SearchInfoSwitch,SearchInfoItem } from './style'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
+
+
 class Header extends React.Component {
+    // 定义方法，显示内容区域,接收参数show
+  serarchArea (show) {
+        if(show){
+            return (
+                <SearchInfo>
+                <SeacrchInfoTitle>热门搜索
+             <SearchInfoSwitch>
+                        缓一缓
+             </SearchInfoSwitch>
+                </SeacrchInfoTitle>
+                <div>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                    <SearchInfoItem>教育</SearchInfoItem>
+                </div>
+    
+    
+            </SearchInfo>
+            )
+        }else{
+          return 
+        }
+    
+   }
+
     // constructor(props){
     //     super(props)
     //     this.handleInputFocus=this.handleInputFocus.bind(this)
@@ -12,6 +44,7 @@ class Header extends React.Component {
     render() {
         // console.log(this.props)
         // 方法和store里的值都映射到props中，方法和获取值都要用this.props
+     
         return (
             <HeaderWarper>
                 <Logo href="/"></Logo>
@@ -26,6 +59,7 @@ class Header extends React.Component {
                             <Search className={this.props.focused ? 'focused' : ''} onFocus={this.props.handleInputFocus} onBlur={this.props.handleInputBlur}></Search>
                         </CSSTransition>
                         <span className={this.props.focused ? 'iconfont icon-sousuo focused' : 'iconfont icon-sousuo'}></span>
+                       {this.serarchArea(this.props.focused)}
 
                     </NavSearch>
                     <NavItem className="right login">登录</NavItem>
@@ -61,11 +95,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleInputFocus() {
-          
+
             const action = {
                 type: 'change_input'
             }
             dispatch(action)
+            dispatch(actionCreators.getList())
         },
         handleInputBlur() {
             const action = {
