@@ -2,6 +2,7 @@ import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch } from './style'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
+import {actionCreators} from './store/index'
 class Header extends React.Component {
     // constructor(props){
     //     super(props)
@@ -53,25 +54,21 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        focused: state.header.focused
+        focused: state.header.get('focused')
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
+    // 改变数据的时候派发action，reducer接收数据
+    // 利用actionCreateor创建action，type值定义个常量而不是变量，actionType
     return {
         handleInputFocus() {
-          
-            const action = {
-                type: 'change_input'
-            }
-            dispatch(action)
+            dispatch(actionCreators.inputFocus())
         },
         handleInputBlur() {
-            const action = {
-                type: 'search_input'
-            }
-            dispatch(action)
+           
+            dispatch(actionCreators.inputBlur())
         }
 
 
