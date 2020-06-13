@@ -2,13 +2,11 @@ import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch, SearchInfo, SeacrchInfoTitle, SearchInfoSwitch,SearchInfoItem } from './style'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-<<<<<<< .mine
+
 import {actionCreators} from './store/index'
 
-=======
 
 
->>>>>>> .theirs
 class Header extends React.Component {
     // 定义方法，显示内容区域,接收参数show
   serarchArea (show) {
@@ -102,11 +100,11 @@ const mapDispatchToProps = (dispatch) => {
     // 利用actionCreateor创建action，type值定义个常量而不是变量，actionType
     return {
         handleInputFocus() {
-<<<<<<< .mine
-            dispatch(actionCreators.inputFocus())
-=======
 
->>>>>>> .theirs
+            dispatch(actionCreators.inputFocus())
+
+
+
             const action = {
                 type: 'change_input'
             }
