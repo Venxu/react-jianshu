@@ -3,7 +3,7 @@ import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSe
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 
-import {actionCreators} from './store/index'
+
 
 
 
