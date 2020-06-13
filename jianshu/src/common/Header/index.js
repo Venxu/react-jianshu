@@ -2,7 +2,8 @@ import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch, SearchInfo, SeacrchInfoTitle, SearchInfoSwitch,SearchInfoItem } from './style'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-import {actionCreators} from './store/index'
+
+
 
 
 
