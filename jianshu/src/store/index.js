@@ -1,5 +1,6 @@
 import {createStore,applyMiddleware } from 'redux'
 import reducer from './reducer'
+// 创建store的时候使用redux-thunk
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 // 查看数据状态的工具

@@ -1,8 +1,12 @@
-const defaultState={
-    
-}
-// reducer导出的是个纯函数
+import {reducer as headReducer} from '../common/Header/store/reducer'
+// state变成immutable格式数据  redux-immutable
+import { combineReducers } from 'redux-immutable'
+import {reducer as HeadReducer} from '../common/Header/store'
+// export default combineReducers({
+//     header:headReducer
+// })
 
-export default()=>{
-    
-}
+const reducer=combineReducers({
+    header:HeadReducer
+})
+export default reducer

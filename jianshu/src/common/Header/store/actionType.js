@@ -7,3 +7,9 @@
 
 export const searchFocus='header/searchFocus'
 export const searchBlur='header/searchBlur'
+export const changeList='header/changeList'
+export const changeMouse='header/changeMouse'
+
+export const changeMouseLeave='header/changeMouseLeave'
+export const changePageList='header/changePageList'
+
