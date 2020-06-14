@@ -7,11 +7,14 @@ import './static/iconfont/iconfont.css'
 
 
 ReactDOM.render(
-  <React.StrictMode>
-        <GlobalStyled />
+  // <React.StrictMode>
+  <div>
+     <GlobalStyled />
 
-    <App />
-  </React.StrictMode>,
+<App />
+  </div>,
+       
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
