@@ -1,5 +1,6 @@
 import * as actionType from './actionType'
 import axios from 'axios'
+// actionCreators派发行为具体要干什么，返回一个对象，但是使用异步请求redux-thunk后直接返回函数
 // focus下action
 import {fromJS} from 'immutable'
 

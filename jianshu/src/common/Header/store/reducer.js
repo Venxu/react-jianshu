@@ -22,7 +22,7 @@ export default (state=defaultState,action)=>{
         return state.set('focused',false)
     }
     if(action.type===actionType.changeList){
-        return state.set('list',action.data).set('tottalPage',action.totalPage)
+        return state.set('list',action.data).set('totalPage',action.totalPage)
         
     }
     if(action.type===actionType.changeMouse){
