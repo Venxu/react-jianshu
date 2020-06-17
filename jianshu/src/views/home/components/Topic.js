@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 class Topic extends Component {
 
     render() {
-        const {list} =this.props
-   
+        const { list } = this.props
+
         return (
             // <div>
             //     这是topic页面
@@ -15,14 +15,14 @@ class Topic extends Component {
             <TopicWrapper>
                 {/* list是immutable类型的数据所以用get获取 */}
                 {list.map((item) => {
-                    return <TopicItem key={item.get('id')}>
+                    return (
+                    <TopicItem key={item.get('id')}>
                         <img className='top-pic' src={item.get('pic')} alt="" />
-                {item.get('title')}
-            </TopicItem>
+                        {item.get('title')}
+                    </TopicItem>
+                    )
                 })
                 }
-
-                {/* 这是topic页面 */}
             </TopicWrapper>
 
         )

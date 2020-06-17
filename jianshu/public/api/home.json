@@ -1,0 +1,69 @@
+{
+    "success":"ok",
+    "topList": [{
+        "id": 1,
+        "title": "热爱生活",
+        "pic": "//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp"
+    },
+    {
+        "id": 2,
+        "title": "热爱生活",
+        "pic": "//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp"
+    },
+    {
+        "id": 3,
+        "title": "热爱生活",
+        "pic": "//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp"
+    }
+        ,
+    {
+        "id": 4,
+        "title": "热爱生活",
+        "pic": "//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp"
+    }
+        ,
+    {
+        "id": 5,
+        "title": "热爱生活",
+        "pic": "//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp"
+    }],
+    "list": [
+        {
+            "id": 1,
+            "title": "做了这么久的程序员，你知道为什么会有Lambda表达式吗？",
+            "content": "一次采访中，金星问许晴：“50岁了还不结婚，你想要什么样的男人？”许晴一脸笑意，温柔地说道：“其实，我要的男人就是要深情，我要的爱情就是神韵，”...",
+            "pic": "https://upload-images.jianshu.io/upload_images/9073718-961643f4ce827225.JPG?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },
+        {
+            "id": 2,
+            "title": "做了这么久的程序员，你知道为什么会有Lambda表达式吗？",
+            "content": "一次采访中，金星问许晴：“50岁了还不结婚，你想要什么样的男人？”许晴一脸笑意，温柔地说道：“其实，我要的男人就是要深情，我要的爱情就是神韵，”...",
+            "pic": "https://upload-images.jianshu.io/upload_images/9073718-961643f4ce827225.JPG?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },
+        {
+            "id": 3,
+            "title": "做了这么久的程序员，你知道为什么会有Lambda表达式吗？",
+            "content": "一次采访中，金星问许晴：“50岁了还不结婚，你想要什么样的男人？”许晴一脸笑意，温柔地说道：“其实，我要的男人就是要深情，我要的爱情就是神韵，”...",
+            "pic": "https://upload-images.jianshu.io/upload_images/9073718-961643f4ce827225.JPG?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        }
+    ],
+    "RecommendList":[
+        {
+            "id":1,
+            "pic":"http://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
+        },
+        {
+            "id":2,
+            "pic":"http://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+        },
+        {
+            "id":3,
+            "pic":"http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+        }
+        ,
+        {
+            "id":4,
+            "pic":"http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+        }
+    ]
+}

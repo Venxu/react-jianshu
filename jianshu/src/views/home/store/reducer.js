@@ -1,40 +1,34 @@
 
 // 数据变成不可改变得类型
-import {fromJS} from 'immutable'
-const defaultState=fromJS({
-    topList:[{
-        id:1,
-        title:'热爱生活',
-        pic:'//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp'
-    },
-    {
-        id:2,
-        title:'热爱生活',
-        pic:'//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp'
-    },
-    {
-        id:3,
-        title:'热爱生活',
-        pic:'//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp'
-    }
-    ,
-    {
-        id:4,
-        title:'热爱生活',
-        pic:'//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp'
-    }
-    ,
-    {
-        id:5,
-        title:'热爱生活',
-        pic:'//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp'
-    }]
-    
+import { fromJS } from 'immutable'
+import {actionType} from './index'
+const defaultState = fromJS({
+    topList: [],
+    list: [],
+    RecommendList: [],
+    listPage:1
+
 })
 // reducer导出的是个纯函数:给点固定输入就有输出，参数不可变
 
-export default (state=defaultState,action)=>{
-    
+export default (state = defaultState, action) => {
+ 
+    switch (action.type) {
+        case actionType.CHANGE_HOME_DATA:
+            return state.merge({
+                RecommendList: fromJS(action.RecommendList),
+                list: fromJS(action.list),
+                topList: fromJS(action.topList)
+            })
+            case actionType.GET_HOME_DATA:
+            return state.merge({
+                "list": state.set('list',state.get('list').concat(action.loadMore)),
+                "listPage":action.nextPage
+
+            })
+           
+            
+    }
     return state
 
 }
