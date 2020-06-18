@@ -24,6 +24,7 @@ export const getHomeData=(dispatch)=>{
 }
 
 const getMoreList=(result,nextPage)=>{
+   
     return{
         type:actionType.GET_HOME_DATA,
         loadMore:fromJS(result.loadMore),
@@ -33,9 +34,8 @@ const getMoreList=(result,nextPage)=>{
 }
 export const loadMore=(listPage)=>{
     return (dispatch)=>{
-        axios.get('/api/homeList.json/?listPage='+listPage).then(res => {
+        axios.get('/api/homeList.json/?'+listPage).then(res => {   
             let result = res.data
-            console.log(result)
             const action = getMoreList(result,listPage+1)
             // const action={
             //     type:'getMoreList',
