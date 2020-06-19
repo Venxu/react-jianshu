@@ -34,7 +34,7 @@ const getMoreList=(result,nextPage)=>{
 }
 export const loadMore=(listPage)=>{
     return (dispatch)=>{
-        axios.get('/api/homeList.json/?'+listPage).then(res => {   
+        axios.get('/api/homeList.json').then(res => {   
             let result = res.data
             const action = getMoreList(result,listPage+1)
             // const action={

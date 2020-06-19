@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { ListItem, ListInfo,LoadMore } from '../style'
 import {connect} from 'react-redux'
 import { actionCreators } from '../store'
-import { fromJS } from 'immutable'
+
 
 
 class List extends Component {
