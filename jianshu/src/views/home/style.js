@@ -155,3 +155,16 @@ margin:30px 0;
 cursor:pointer;
 border-radius:20px;
 `
+
+export const BackTop=styled.div`
+position:fixed;
+right:50px;
+bottom:80px;
+width:60px;
+height:60px;
+line-height:60px;
+border:1px solid #dcdcdc;
+font-size:14px;
+text-align:center;
+
+`

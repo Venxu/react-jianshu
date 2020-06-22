@@ -3,12 +3,14 @@ import {reducer as headReducer} from '../common/Header/store/reducer'
 import { combineReducers } from 'redux-immutable'
 import {reducer as HeadReducer} from '../common/Header/store'
 import {reducer as HomeReducer} from '../views/home/store'
+import {reducer as DetailReducer} from '../views/detail/store'
 // export default combineReducers({
 //     header:headReducer
 // })
 
 const reducer=combineReducers({
     header:HeadReducer,
-    home:HomeReducer
+    home:HomeReducer,
+    detail:DetailReducer
 })
 export default reducer

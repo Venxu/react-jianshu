@@ -2,7 +2,7 @@ import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch, SearchInfo, SeacrchInfoTitle, SearchInfoSwitch, SearchInfoItem } from './style'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-
+import {Link} from 'react-router-dom'
 import { actionCreators } from './store/index'
 
 
@@ -65,7 +65,10 @@ class Header extends React.Component {
 
         return (
             <HeaderWarper>
-                <Logo href="/"></Logo>
+                <Link to='/'>
+                    <Logo></Logo>
+                </Link>
+
                 <Nav>
                     <NavItem className="left actived">首页</NavItem>
                     <NavItem className="left down">下载app</NavItem>

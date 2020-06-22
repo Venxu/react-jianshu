@@ -7,6 +7,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Home from '../src/views/home/index'
 import Detail from '../src/views/detail/index'
+import Login from '../src/views/login/index'
+
 
 
 function App() {
@@ -14,17 +16,20 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <div>
-        <Header></Header>
+ 
+        
           <BrowserRouter>
             <div>
+              <Header></Header>
               <Route path='/' exact component={Home}></Route>
-              <Route path='/detail' exact component={Detail}></Route>
+              <Route path='/detail/:id' exact component={Detail}></Route>
+              <Route path='/login' exact component={Login}></Route>
+              {/* <Route path='/detail' exact component={Detail}></Route> */}
             </div>
 
           </BrowserRouter>
           
-        </div>
+    
 
       </Provider>
     </div>

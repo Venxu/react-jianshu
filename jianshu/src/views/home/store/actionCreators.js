@@ -46,3 +46,16 @@ export const loadMore=(listPage)=>{
     
     }
 }
+
+export const changeScrollShow=(show)=>{
+ 
+   return (dispatch)=>{
+       const actions={
+         type:actionType.CHANGE_SCROLL_VALUE,
+           show:fromJS(show)
+       }
+       dispatch(actions)
+
+   }
+      
+}

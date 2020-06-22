@@ -9,7 +9,7 @@ height:56px;
 border-bottom:1px solid #e7e7e7;
 `
 
-export const Logo=styled.a`
+export const Logo=styled.div`
 height:56px;
 width:100px;
 
