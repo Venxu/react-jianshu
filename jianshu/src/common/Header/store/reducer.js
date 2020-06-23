@@ -8,6 +8,8 @@ const defaultState=fromJS({
     list:[],
     page:1,
     totalPage:1
+   
+   
 })
 // reducer导出的是个纯函数:给点固定输入就有输出，参数不可变
 

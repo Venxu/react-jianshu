@@ -23,7 +23,6 @@ class Recommend extends Component{
 }
 
 const mapState=(state)=>{
-    console.log(state)
     return{
         RecommendList:state.get('home').get('RecommendList')
     }

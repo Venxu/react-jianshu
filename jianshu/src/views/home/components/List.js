@@ -10,7 +10,6 @@ class List extends Component {
     render() {
 
         const { list, getMoreList, listPage } = this.props
-        console.log(list)
         return (
             <div>
 

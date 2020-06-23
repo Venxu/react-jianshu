@@ -83,7 +83,9 @@ class Header extends React.Component {
                         {this.serarchArea(this.props.focused || this.props.mouseIn)}
 
                     </NavSearch>
-                    <NavItem className="right login">登录</NavItem>
+                    {this.props.isLogin}
+                    {this.props.isLogin?<NavItem className="right login">退出</NavItem>:<Link to={'/login'}><NavItem className="right login">登录</NavItem></Link>}
+                    
                     <NavItem className="right">
                         <Score></Score>
                     </NavItem>
@@ -107,8 +109,6 @@ class Header extends React.Component {
 }
 // 将state里数据映射到组件
 const mapStateToProps = (state) => {
-
-
     return {
 
         // immutable调用数据 通过.get(传入属性值)
@@ -120,7 +120,8 @@ const mapStateToProps = (state) => {
         page: state.get('header').get('page'),
         totalPage: state.get('header').get('totalPage'),
 
-        mouseIn: state.get('header').get('mouseIn')
+        mouseIn: state.get('header').get('mouseIn'),
+        isLogin:state.get('login').get('isLogin')
 
     }
 

@@ -39,7 +39,6 @@ const mapStateProps=(state)=>{
 const mapDispatch=(dispatch)=>{
     return {
         getDetail(id){
-            console.log(id)
             dispatch(actionCreators.getDetailList(id))
 
         }
