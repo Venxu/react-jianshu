@@ -6,8 +6,9 @@ import store from './store/index'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Home from '../src/views/home/index'
-import Detail from '../src/views/detail/index'
+import Detail from '../src/views/detail/loadable'
 import Login from '../src/views/login/index'
+import Write from '../src/views/write/index'
 
 
 
@@ -24,6 +25,7 @@ function App() {
               <Route path='/' exact component={Home}></Route>
               <Route path='/detail/:id' exact component={Detail}></Route>
               <Route path='/login' exact component={Login}></Route>
+              <Route path='/write' exact component={Write}></Route>
               {/* <Route path='/detail' exact component={Detail}></Route> */}
             </div>
 

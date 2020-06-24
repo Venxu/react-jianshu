@@ -11,5 +11,6 @@ export const changeList='header/changeList'
 export const changeMouse='header/changeMouse'
 
 export const changeMouseLeave='header/changeMouseLeave'
-export const changePageList='header/changePageList'
+export const changePageList='header/changePageList' 
+
 

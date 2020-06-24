@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { DetailWrapper,Header,Content } from './style'
 import {connect} from 'react-redux'
 import { actionCreators } from '../detail/store'
+import {withRouter} from 'react-router-dom'
 
 class Detail extends Component {
     render() {
@@ -44,5 +45,5 @@ const mapDispatch=(dispatch)=>{
         }
     }
 }
-
-export default connect(mapStateProps,mapDispatch)(Detail)
+// 使用loadable后避免接收参数错误所以使用withRouter
+export default connect(mapStateProps,mapDispatch)(withRouter(Detail))

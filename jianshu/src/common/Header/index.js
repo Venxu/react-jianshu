@@ -2,7 +2,7 @@ import React from 'react'
 import { HeaderWarper, Logo, Nav, NavItem, Score, Search, Button, Additon, NavSearch, SearchInfo, SeacrchInfoTitle, SearchInfoSwitch, SearchInfoItem } from './style'
 import { connect } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { actionCreators } from './store/index'
 
 
@@ -83,9 +83,9 @@ class Header extends React.Component {
                         {this.serarchArea(this.props.focused || this.props.mouseIn)}
 
                     </NavSearch>
-                    {this.props.isLogin}
-                    {this.props.isLogin?<NavItem className="right login">退出</NavItem>:<Link to={'/login'}><NavItem className="right login">登录</NavItem></Link>}
-                    
+                  
+                    {this.props.isLogin ? <NavItem className="right login">退出</NavItem> : <Link to={'/login'}><NavItem className="right login">登录</NavItem></Link>}
+
                     <NavItem className="right">
                         <Score></Score>
                     </NavItem>
@@ -93,9 +93,11 @@ class Header extends React.Component {
                         <span className="iconfont icon-Aa"></span>
                     </NavItem>
                     <Additon>
-                        <Button className="writ">
-                            <span className="iconfont icon-yumaobi"></span>写文章
+                        <Link to={'/write'}>
+                                <Button className="writ">
+                                <span className="iconfont icon-yumaobi"></span>写文章
                        </Button>
+                        </Link>
                         <Button>注册</Button>
 
                     </Additon>
@@ -121,7 +123,7 @@ const mapStateToProps = (state) => {
         totalPage: state.get('header').get('totalPage'),
 
         mouseIn: state.get('header').get('mouseIn'),
-        isLogin:state.get('login').get('isLogin')
+        isLogin: state.get('login').get('isLogin')
 
     }
 
@@ -131,6 +133,7 @@ const mapDispatchToProps = (dispatch) => {
     // 改变数据的时候派发action，reducer接收数据
     // 利用actionCreateor创建action，type值定义个常量而不是变量，actionType
     return {
+      
         handleInputFocus() {
             dispatch(actionCreators.getList())
             dispatch(actionCreators.searchFocus())
