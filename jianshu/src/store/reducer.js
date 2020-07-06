@@ -5,6 +5,7 @@ import {reducer as HeadReducer} from '../common/Header/store'
 import {reducer as HomeReducer} from '../views/home/store'
 import {reducer as DetailReducer} from '../views/detail/store'
 import {reducer as LoginReducer} from '../views/login/store'
+import {reducer as focusReducer} from '../views/focus/store'
 // export default combineReducers({
 //     header:headReducer
 // })
@@ -13,6 +14,7 @@ const reducer=combineReducers({
     header:HeadReducer,
     home:HomeReducer,
     detail:DetailReducer,
-    login:LoginReducer
+    login:LoginReducer,
+    focus:focusReducer
 })
 export default reducer

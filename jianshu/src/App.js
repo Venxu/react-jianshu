@@ -9,6 +9,7 @@ import Home from '../src/views/home/index'
 import Detail from '../src/views/detail/loadable'
 import Login from '../src/views/login/index'
 import Write from '../src/views/write/index'
+import WriteInfo from '../src/views/focus/index'
 
 
 
@@ -26,13 +27,9 @@ function App() {
               <Route path='/detail/:id' exact component={Detail}></Route>
               <Route path='/login' exact component={Login}></Route>
               <Route path='/write' exact component={Write}></Route>
-              {/* <Route path='/detail' exact component={Detail}></Route> */}
+              <Route path='/WriteInfo/:id' exact component={WriteInfo}></Route>
             </div>
-
           </BrowserRouter>
-          
-    
-
       </Provider>
     </div>
   );

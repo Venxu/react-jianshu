@@ -4,6 +4,7 @@ import Topic from './components/Topic'
 import Recommend from './components/Recommend'
 import List from './components/List'
 import Writer from './components/Writer'
+import RecommendWriter from './components/RecomnendWriter'
 
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
@@ -18,13 +19,14 @@ class Home extends Component {
             // <HomeBox>
             <HomeWrapper>
                 <HomeLeft>
-                    <img className='banner-img' src="//upload-images.jianshu.io/upload_images/2509688-5bd44d55ff3fe90d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1024/format/webp" alt="" />
+                    <img className='banner-img' src="https://upload.jianshu.io/admin_banners/web_images/4986/33b9e72aff1e083dfb5aa7a1c8a427e53fdc1e9e.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt="" />
                     <Topic></Topic>
                     <List></List>
                 </HomeLeft>
                 <HomeRight>
                     <Recommend></Recommend>
                     <Writer></Writer>
+                    <RecommendWriter></RecommendWriter>
                 </HomeRight>
                 {this.props.showScroll ? <BackTop onClick={this.handleScroll}>回到顶部</BackTop>:''}
             </HomeWrapper>

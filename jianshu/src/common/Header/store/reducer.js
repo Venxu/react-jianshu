@@ -20,7 +20,7 @@ export default (state=defaultState,action)=>{
         return state.set('focused',true)
     }
     if(action.type===actionType.searchBlur){
-        console.log(state.focused)
+     
         return state.set('focused',false)
     }
     if(action.type===actionType.changeList){
