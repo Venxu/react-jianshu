@@ -107,7 +107,7 @@ width:200px;
 `
 
 export const MiddleBox = styled.div`
-height:50px;
+
 
 margin-top:10px;
 float:left;
@@ -125,7 +125,7 @@ float:left;
 `
 
 export const MiddleFans = styled.div`
-height:50px;
+
 
 margin-top:10px;
 float:left;
@@ -145,7 +145,7 @@ margin-left:10px;
 `
 
 export const MiddleWorks = styled.div`
-height:50px;
+
 
 margin-top:10px;
 margin-left:10px;
@@ -165,7 +165,7 @@ float:left;
 `
 
 export const MiddleTexts = styled.div`
-height:50px;
+
 margin-top:10px;
 margin-left:10px;
 float:right;
@@ -185,7 +185,7 @@ float:right;
 
 
 export const MiddleLIke = styled.div`
-height:50px;
+
 
 margin-top:10px;
 margin-left:10px;
@@ -221,11 +221,16 @@ line-height:43px;
 text-align:center;
 float:left;
 cursor:pointer;
-.focusUser{
+
+.aa{
+   
     font-size:15px;
     color:#969696;
 }
-
+.active{
+    border-bottom: 2px solid #646464
+   
+}
 
 `
 export const Fans = styled.div`
@@ -238,13 +243,31 @@ margin-left:30px;
 cursor:pointer;
 `
 
-export const UserItem = styled.div`
+export const Test = styled.div`
 width:680px;
 height:80px;
-border-bottom:1px solid #f0f0f0;
 
 
-margin-top:10px;
+    dispaly:none;
+
+
+
+`
+export const ListItem = styled.div`
+width:680px;
+height:85px;
+border-bottom: 1px solid #f0f0f0;
+
+
+`
+export const UserItem = styled.div`
+width:680px;
+height:85px;
+
+
+
+dispaly:none;
+margin-top:20px;
 .Focus{
     float:right;
     border: 1px solid rgba(59,194,29,.7);
@@ -265,7 +288,14 @@ margin-top:10px;
 
 
 `
+export const Bottom = styled.div`
+ color:#969696;
+ font-size:12px;
 
+ .writeNum{
+
+ }
+ `
 export const UserImg = styled.div`
 width:52px;
 height:52px;

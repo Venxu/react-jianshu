@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FocusUser, Fans,UserItem,TopBody,UserImg,UserIntrod,Middle,MiddleBox,MiddleFans,MiddleWorks } from '../style'
+import { FocusUser, Test, Fans, UserItem, TopBody, UserImg, UserIntrod, Middle, MiddleBox, MiddleFans, MiddleWorks, ListItem, Bottom } from '../style'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
 import { Link } from 'react-router-dom'
@@ -8,50 +8,111 @@ import { Link } from 'react-router-dom'
 
 
 class UserInfo extends Component {
+
     render() {
-console.log(this.props.userInfoList)
+
         return (
-            
+
             <div>
-                 <TopBody>
-                <FocusUser className='focusUser'>关注用户 122</FocusUser>
-                <Fans className='focusUser'>粉丝 318874</Fans>
+                <TopBody>
+                    {
+
+                        this.props.tabs.map((item, index) => {
+                            return (
+                                // <FocusUser key={index} onClick={() => this.props.changeTab(index)}>{item}</FocusUser>
+                                <FocusUser key={index} onClick={() => this.props.changeTab(index)}>
+                                    <p className={this.props.tab === index ? "active aa" : "aa"}>{item}</p>
+
+                                </FocusUser>
+
+                            )
+
+                        })
+                    }
+
                 </TopBody>
-                <UserItem>
-                    <UserImg>
-                        <img className='userImg' src="https://cdn2.jianshu.io/assets/default_avatar/14-0651acff782e7a18653d7530d6b27661.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/180/h/180" alt=""/>
-                    </UserImg>
-                    <UserIntrod>
-                    <Middle>
-                    <p className='name listname'>三生石上生桃花</p>
-                    <MiddleBox>
-                        
-                        <p className='boxFocus'>关注<span>-</span><span className='boxTop'>122</span></p>
-                    </MiddleBox>
-                    <MiddleFans>
-                        
-                        <p className='boxFocus'>粉丝<span>-</span><span className='boxTop'>3187</span><span></span></p>
-                    </MiddleFans>
-                    <MiddleWorks>
-                        <p className='boxFocus'>文章 <span>-</span> <span className='boxTop'>290</span><span></span></p>
-                    </MiddleWorks>
-                    </Middle>
-                    </UserIntrod>
-                    <button className='Focus Button'>+关注</button>
-                </UserItem>
+                <div>
+                    {this.props.userItem.map((item, index) => {
+                        return (
+
+                            <div>
+                                {/* <span className="activeNone">{item.get('tabName')}</span> */}
+                                {this.props.tab === index ?
+
+
+                                    <UserItem key={index}>
+                                        {item.get('children').map((item, index) => {
+                                            return (
+                                                <ListItem>
+                                                    <UserImg>
+                                                        <img className='userImg' src={item.get('pic')} alt="" />
+                                                    </UserImg>
+                                                    <UserIntrod>
+                                                        <Middle>
+                                                            <p className='name listname'>{item.get('name')}</p>
+                                                            <MiddleBox>
+
+                                                                <p className='boxFocus'>关注<span>-</span><span className='boxTop'>{item.get('focus')}</span></p>
+                                                            </MiddleBox>
+                                                            <MiddleFans>
+
+                                                                <p className='boxFocus'>粉丝<span>-</span><span className='boxTop'>{item.get('fans')}</span><span></span></p>
+                                                            </MiddleFans>
+                                                            <MiddleWorks>
+                                                                <p className='boxFocus'>文章 <span>-</span> <span className='boxTop'>{item.get('title')}</span><span></span></p>
+                                                            </MiddleWorks>
+                                                            <Bottom>
+                                                                <p className='writeNum'>  写了 44923 字，获得了 890 个喜欢</p>
+                                                            </Bottom>
+                                                        </Middle>
+
+                                                    </UserIntrod>
+                                                    <button className='Focus Button'>+关注</button>
+                                                </ListItem>
+                                            )
+                                        }
+                                        )
+                                        }
+
+                                    </UserItem> : ''}
+                            </div>
+
+
+                        )
+
+                    })}
+                </div>
+
             </div>
         )
     }
-    // componentDidMount(){
-    //     this.props.fetchData()
-    // }
-}
- const mapState=(state)=>{
-    //  console.log(state.get('focus').get('userInfoList'))
-     return {
-        userInfoList:state.get('focus').get('userInfoList')
-         
+    componentDidMount(){
+        this.props.getFetchData()
+    }
 
-     }
- }
-export default connect(mapState, null)(UserInfo)
+}
+const mapState = (state) => {
+    return {
+        tab: state.get('focus').get('tab'),
+        tabs: state.get('focus').get('tabs'),
+        userItem: state.get('focus').get('userItem')
+
+
+    }
+}
+
+const mapDispatch = (dispatch) => {
+    return {
+        // 获取列表数据
+        getFetchData(){
+            dispatch(actionCreators.getData())
+
+        },
+        changeTab(index) {
+            dispatch(actionCreators.changeTab(index))
+
+        }
+
+    }
+}
+export default connect(mapState, mapDispatch)(UserInfo)

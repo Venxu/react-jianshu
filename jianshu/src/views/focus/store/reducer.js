@@ -3,34 +3,9 @@
 import { fromJS } from 'immutable'
 import { actionType } from './index'
 const defaultState = fromJS({
-    userInfoList:[{
-        tabs:'关注用户',
-        userList:[
-            {
-                id:1,
-                pic:'ss',
-                name:'lll',
-                focus:11,
-                fans:23,
-                title:2222
-            }
-        ]
-    },
-    {
-        tabs:'粉丝',
-        userList:[
-            {
-                id:2,
-                pic:'ss',
-                name:'lll',
-                focus:11,
-                fans:23,
-                title:2222
-            }
-        ]
-    }
-]
-    
+    tabs: ["关注用户11", "粉丝859632"],
+    tab: 0,
+    userItem: []
 
 })
 // reducer导出的是个纯函数:给点固定输入就有输出，参数不可变
@@ -38,8 +13,12 @@ const defaultState = fromJS({
 export default (state = defaultState, action) => {
 
     switch (action.type) {
-       
-     
+        case actionType.CHANGE_TAB_DATA:
+            return state.set('tab', action.tab)
+        case actionType.GET_DATA:
+           return state.set('userItem', action.userItem)
+
+
 
 
     }
