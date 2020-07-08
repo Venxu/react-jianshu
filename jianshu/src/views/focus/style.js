@@ -315,3 +315,115 @@ export const UserIntrod = styled.div`
 
 
 `
+export const TitleBody = styled.div`
+width:640px;
+height:50px;
+border-bottom: 1px solid #f0f0f0;
+margin-top:30px;
+
+
+`
+
+export const TitleItem = styled.div`
+
+
+height:50px;
+
+text-align:center;
+line-height:50px;
+
+
+`  
+
+export const TitleExcer = styled.div`
+width:100px;
+height:50px;
+float:left;
+text-align:center;
+line-height:50px;
+cursor:pointer;
+margin-left:10px;
+
+
+` 
+export const TitleDesc = styled.div`
+width:100px;
+height:50px;
+float:left;
+text-align:center;
+line-height:50px;
+cursor:pointer;
+
+
+` 
+export const TitleHot = styled.div`
+width:100px;
+height:50px;
+float:left;
+text-align:center;
+line-height:50px;
+cursor:pointer;
+
+
+` 
+
+export  const TitleName=styled.div`
+width:100px;
+   font-size: 15px;
+    font-weight: 700;
+    color: #969696;
+    float:left;
+    cursor:pointer;
+    margin-left:20px;
+  
+ 
+    .tabActive{
+        border-bottom: 2px solid #646464;
+      
+    }
+
+
+
+`
+
+export  const TitleList=styled.div`
+width:640px;
+height:100px;
+border-bottom:1px solid #f0f0f0;
+margin-top:30px;
+`
+
+export const TitleLeft=styled.div`
+width:485px;
+height:100px;
+float:left;
+
+.top-title{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color:#333;
+}
+.bottom-title{
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
+}
+
+`
+
+export  const TitleRight=styled.div`
+width:125px;
+height:100px;
+float:right;
+
+.title-img{
+    width:125px;
+    height:100px;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+}
+
+
+`

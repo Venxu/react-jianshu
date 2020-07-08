@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { actionCreators } from '../store'
 import { Link } from 'react-router-dom'
 import UserInfo from './UserInfo'
+import Title from './Title'
 
 
 
@@ -50,7 +51,8 @@ class TopInfo extends Component {
 
             </TopMsg>
            
-                <UserInfo></UserInfo>
+                {/* <UserInfo></UserInfo> */}
+                <Title></Title>
            
             </div>
           )
