@@ -73,6 +73,7 @@ margin-left:30px;
 export const SendContent = styled.div`
 float:right;
 width:200px;
+
 .sendMg{
     float:left;
     border: 1px solid rgba(59,194,29,.7);
@@ -393,6 +394,11 @@ border-bottom:1px solid #f0f0f0;
 margin-top:30px;
 `
 
+export  const ItemTab=styled.div`
+width:640px;
+height:100px;
+
+`
 export const TitleLeft=styled.div`
 width:485px;
 height:100px;
@@ -417,6 +423,7 @@ export  const TitleRight=styled.div`
 width:125px;
 height:100px;
 float:right;
+margin-top:-20px;
 
 .title-img{
     width:125px;
@@ -425,5 +432,133 @@ float:right;
     border: 1px solid #f0f0f0;
 }
 
+
+`
+
+
+export  const CreateWriter=styled.div`
+width:300px;
+height:30px;
+cursor:pointer;
+
+
+.textStyle{
+    color:#333;
+    font-size:14px;
+    tex-align:center;
+    margin-top:8px;
+    margin-left:6px;
+    float:left;
+}
+.create-img{
+    width:20px;
+    height:20px;
+    margin-top:6px;
+    display:inline-block;
+    float:left;
+}
+
+`
+
+export const WriteTop=styled.div`
+border-bottom:1px solid #f0f0f0;
+height:200px;
+
+
+`
+
+export  const SelfIntrod=styled.div`
+border-bottom:1px solid #f0f0f0;
+height:210px;
+.selfStyle{
+    color:#969696;
+    font-size:14px;
+    margin-bottom:10px;
+    margin-top:20px;
+}
+
+`
+
+export  const DetailIntrod=styled.div`
+width:280px;
+
+color:#333;
+font-size:14px;
+line-height:20px;
+.bottomText{
+    margin-top:40px;
+    margin-bottom:10px;
+}
+
+`
+export  const OtherFocus=styled.div`
+border-bottom:1px solid #f0f0f0;
+margin-top:30px;
+height:87px;
+.focusText{
+    font-size:14px;
+    color:#333;
+    margin-left:10px;
+
+}
+
+`
+export const LikeTitle=styled.div`
+margin-bottom:30px;
+
+`
+
+export const SpecTitle=styled.div`
+border-bottom:1px solid #f0f0f0;
+height:120px;
+.otherTitle{
+    font-size:14px;
+    color:#969696;
+    margin-bottom:10px;
+    margin-top:20px;
+}
+
+`
+export const Content=styled.div`
+width:280px;
+height:40px;
+
+.TitleImg{
+    width:32px;
+    height:32px;
+    float:left;
+    border: 1px solid #ddd;
+    border-radius: 10%;
+}
+.titleIntrod{
+    float:left;
+    font-size: 14px;
+    color: #333;
+    margin-top:10px;
+    margin-left:10px;
+}
+}
+
+`
+
+export const OtherWork=styled.div`
+.workTitle{
+    color:#969696;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.workIntrod{
+
+}
+
+`
+
+export  const WorkContent=styled.div`
+margin-top:10px;
+.workIntrod{
+    font-size:14px;
+    color:#333;
+    margin-left:10px;
+}
 
 `

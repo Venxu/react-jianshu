@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { actionCreators } from '../store'
 import { Link } from 'react-router-dom'
 import TopInfo from './TopInfo'
+import RightList from './RightList'
+
 
 
 
@@ -17,7 +19,7 @@ class WriteInfo extends Component {
                     <TopInfo>
                     
                     </TopInfo></WriterLeft>
-                <WriterRight>right</WriterRight>
+                <RightList></RightList>
 
             </WriterWrapper>
         )

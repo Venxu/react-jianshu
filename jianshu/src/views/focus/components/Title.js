@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TitleBody, TitleItem, TitleName, TitleList, TitleLeft, TitleRight, Middle, MiddleBox, MiddleFans, MiddleWorks, ListItem, Bottom } from '../style'
+import { TitleBody, TitleItem, TitleName, TitleList, TitleLeft, TitleRight, ItemTab } from '../style'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
 import { Link } from 'react-router-dom'
@@ -29,18 +29,35 @@ class Title extends Component {
                     }
                 </TitleItem>
             </TitleBody>
-            <TitleList>
-                <TitleLeft>
-                    <p className='top-title'>穿越阿帕拉契亚(十七)创造历史的哥特伍德奶奶</p>
-                    <p className='bottom-title'>
-                        1955年9月11日，法明顿，缅因州（美联社）— 今天，来自俄亥俄州加利波利斯，行走2050英里阿帕拉契亚山径的67岁的老祖母已经接近了她的旅程...
-                    </p>
-                </TitleLeft>
-                <TitleRight>
-                    <img className='title-img' src="https://upload-images.jianshu.io/upload_images/7133325-2529770735d39260.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="" />
-                </TitleRight>
+            <div>
+                {this.props.tabData.map((item, index) => {
+                    return (
+                    this.props.titleTab === index ?
+                   
+                        <ItemTab key={index}>
+                            {/* {item.get('children')} */}
+                           {item.get('children').map((items,index)=>{
+                               return ( <TitleList key={index}>
+                                <TitleLeft>
+                               <p className='top-title'>{items.get('title')}</p>
+                                    <p className='bottom-title'>{items.get('desc')}
+                                       
+                                    </p>
+                                 </TitleLeft>
+                                 <TitleRight>
+                                     <img className='title-img' src={items.get('pics')} alt="" />
+                                 </TitleRight>
 
-            </TitleList>
+                            </TitleList>)
+                           })}
+                         
+                   </ItemTab> 
+                        : ''
+                        )
+                })}
+
+            </div>
+
 
         </div>)
     }
@@ -79,3 +96,38 @@ const mapDispatch = (dispatch) => {
     }
 }
 export default connect(mapState, mapDispatch)(Title)
+
+
+// // 截取数组slice() 和 splice() 的用法
+
+// // 1、slice():①slice() 方法可从已有的数组中返回选定的元素。②可提取字符串的某个部分，并以新的字符串返回被提取的部分
+// // ①他是将截取到一个新数组返回,不会改变原数组 slice(start,end)，start开始的索引，end结束的索引（选填），包括开始但是不包括结束
+
+// var arr=['1','2','3','4']
+// console.log(arr.slice(1,3))//['2','3']
+
+// // 如果索引为负数，则从倒数开始，索引为-1，就是倒数第一个，-2倒数第二个
+//  var arr=['1','2','3','4','5']
+//  console.log(arr.slice(3,-1))//['4']
+
+// //  如果参数只有一个值，则从开始的位置一直截取到最后
+// var arr=['1','2','3','4','5']
+// console.log(arr.slice(2))//['3','4','5']
+
+
+// // 数组中的splice()方法
+// // 删除数组中的指定元素，该方法会改变原数组 splice(index,howmoney,item),index:从哪里开始删除，howmoney：删除多少个，item：传递新的元素，自动插入开始元素的前面
+// var arr = ["贾宝玉", "林黛玉", "薛宝钗", "王熙凤", "香菱"];   
+// console.log(arr.splice(1,2)); //  ["林黛玉", "薛宝钗"]
+// console.log(arr);  // ["贾宝玉", "王熙凤", "香菱"]
+
+// //  当第二个参数(删除数量)小于0视为0
+// var arr = ["贾宝玉", "林黛玉", "薛宝钗", "王熙凤", "香菱"];
+// console.log(arr.splice(1, -2)); //  []
+// console.log(arr);  // ["贾宝玉", "林黛玉", "薛宝钗", "王熙凤", "香菱"]
+
+// //  删除并添加
+// var arr = ["贾宝玉", "林黛玉", "薛宝钗", "王熙凤", "香菱"];
+// console.log(arr.splice(1, 2, '晴雯', '紫鹃')); // ["林黛玉", "薛宝钗"]
+// console.log(arr);  // ["贾宝玉", "晴雯", "紫鹃", "王熙凤", "香菱"]
+

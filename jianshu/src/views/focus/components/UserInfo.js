@@ -38,8 +38,6 @@ class UserInfo extends Component {
                             <div>
                                 {/* <span className="activeNone">{item.get('tabName')}</span> */}
                                 {this.props.tab === index ?
-
-
                                     <UserItem key={index}>
                                         {item.get('children').map((item, index) => {
                                             return (
