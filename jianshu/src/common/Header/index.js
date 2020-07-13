@@ -8,6 +8,7 @@ import { actionCreators } from './store/index'
 
 
 
+
 class Header extends React.Component {
 
     // 定义方法，显示内容区域,接收参数show

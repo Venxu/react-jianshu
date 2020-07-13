@@ -10,6 +10,7 @@ import Detail from '../src/views/detail/loadable'
 import Login from '../src/views/login/index'
 import Write from '../src/views/write/index'
 import WriteInfo from '../src/views/focus/index'
+import LookMore from '../src/views/more/index'
 
 
 
@@ -28,6 +29,7 @@ function App() {
               <Route path='/login' exact component={Login}></Route>
               <Route path='/write' exact component={Write}></Route>
               <Route path='/WriteInfo/:id' exact component={WriteInfo}></Route>
+              <Route path='/LookMore' exact component={LookMore}></Route>
             </div>
           </BrowserRouter>
       </Provider>

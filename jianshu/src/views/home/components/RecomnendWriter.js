@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { actionCreators } from '../store'
 import { Advice, AdviceLeft, AdviceRight, RecommendList, TopIntrod, Focus, LookMore } from '../style'
 import { Link } from 'react-router-dom'
+
 class RecommendWriter extends Component {
     render() {
 
@@ -33,8 +34,10 @@ class RecommendWriter extends Component {
 
                     })
                 }
-
-                <LookMore>查看更多</LookMore>
+                  <Link to={'/LookMore'} style={{ textDecoration: 'none' }}>
+                  <LookMore>查看更多</LookMore>
+                  </Link>
+          
 
 
             </div>
